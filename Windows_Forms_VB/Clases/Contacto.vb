@@ -1,7 +1,9 @@
 ﻿Public Class Contacto
-    Inherits Persona
+    Inherits Persona 'hereda de persona
 
+    ' variables, variables globales o atributos
     Private _telefono As String
+    Private _correo As String
 
     Public Property Telefono As String
         Get
@@ -11,7 +13,15 @@
             _telefono = value.Replace(" ", "").Replace("-", "")
         End Set
     End Property
+    Public Property Correo As String
+        Get
+            Return _correo
+        End Get
+        Set(value As String)
 
+            _correo = value
+        End Set
+    End Property
     Public Sub New()
         MyBase.New()
         _telefono = String.Empty
@@ -23,6 +33,7 @@
     End Sub
 
     Public Overrides Function ToString() As String
-        Return MyBase.ToString() & " " & _telefono
+        Return MyBase.ToString() & " " & _correo & " " & _telefono
     End Function
 End Class
+

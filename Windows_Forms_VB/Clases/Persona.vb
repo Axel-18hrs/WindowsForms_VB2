@@ -53,11 +53,15 @@
         _nombre = String.Empty
         FechaNacimiento = Nothing
     End Sub
+
+    Protected Overrides Sub Finalize()
+
+    End Sub
     Public Sub New(_nombre As String, _fechaNacimiento As DateTime?)
         Me._nombre = _nombre
         Me._fechaNacimiento = _fechaNacimiento
     End Sub
     Public Overrides Function ToString() As String
-        Return _nombre.ToUpper() & " " & Edad
+        Return _nombre.ToUpper() & " " & FechaNacimiento & " " & Edad
     End Function
 End Class
